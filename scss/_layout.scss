@@ -1,0 +1,67 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+main {
+  width: 100%;
+  max-width: v.$container-max;
+  margin: 0 auto;
+  padding: 0 v.$space-lg v.$space-xl;
+  
+  > section, aside { margin-top: 36px; }
+}
+
+header {
+  background: v.$white;
+  border-bottom: 1px solid v.$line;
+  padding: 14px v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand .slogan { font-size: 13px; margin-bottom: 0; }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-sm;
+    
+    @include m.respond-to(v.$bp-tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: v.$ink;
+      padding: 10px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+
+      &:hover, &.active {
+        color: v.$green;
+        border-bottom-color: v.$green;
+      }
+    }
+  }
+}
+
+footer#contacts {
+  background: v.$footer;
+  color: v.$white;
+  padding: v.$space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+
+  @include m.respond-to(v.$bp-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  p, strong { color: v.$white; }
+}
