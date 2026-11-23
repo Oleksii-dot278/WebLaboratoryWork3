@@ -2,6 +2,8 @@
 <html lang="uk">
 <head>
 <meta meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/monitoring.js" defer></script>
+<script type="module" src="js/app.js"></script>
 <title>Акустична варта</title>
 <link rel="stylesheet" href="css/main.css">
 </head>
@@ -131,5 +133,20 @@
     <p>info@acoustic-watch.example · +380 44 000 00 00</p>
     <p>© 2024 Акустична варта. Всі права захищені.</p>
 </footer>
+
+<section id="sensors">
+  <h2>Датчики</h2>
+  <p id="summary"></p>
+  <label>Район
+    <select id="district-filter"><option value="">Усі</option></select>
+  </label>
+  <form id="measurement-form">
+    <select id="sensor-id"></select>
+    <input id="sensor-value" type="number" step="1" required placeholder="dB">
+    <button type="submit">Додати вимірювання</button>
+  </form>
+  <p id="form-error" role="alert"></p>
+  <div id="sensor-list"></div>
+</section>
 </body>
 </html>

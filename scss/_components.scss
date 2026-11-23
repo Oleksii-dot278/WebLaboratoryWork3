@@ -138,3 +138,15 @@ td.bad { color: v.$red; font-weight: 600; }
     textarea, button { grid-column: 1 / -1; }
   }
 }
+
+.sensor-card {
+  border-left: 6px solid;
+  padding: 10px 14px;
+  background: #fff;
+  p { margin: 4px 0; }
+  &.normal   { border-color: #2e9e5b; }
+  &.warning  { border-color: #e0a100; }
+  &.critical { border-color: #d63a3a; }
+}
+#sensor-list { display: flex; flex-wrap: wrap; gap: 14px; }
+#form-error  { color: #d63a3a; }
